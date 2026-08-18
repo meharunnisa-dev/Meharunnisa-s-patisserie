@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0">
+
+  <title>
+    Menu | Meharunnisa's Pâtisserie
+  </title>
+
+  <link
+    rel="stylesheet"
+    href="css/style.css">
+
+  <style>
+
+    /* ==================================
+       MENU PAGE
+    ================================== */
+
+    .menu-page {
+
+      background: #ffffff;
+
+      padding:
+        70px 0 100px;
+
+      min-height: 700px;
+
+    }
+
+
+    .menu-image-grid {
+
+      max-width: 1100px;
+
+      margin: 0 auto;
+
+      display: grid;
+
+      grid-template-columns:
+        repeat(3, 1fr);
+
+      gap: 35px;
+
+    }
+
+
+    .menu-image-card {
+
+      background:
+        linear-gradient(
+          145deg,
+          #fff9e9,
+          #f4e2a7,
+          #d9b84f
+        );
+
+      padding: 12px;
+
+      border-radius: 18px;
+
+      box-shadow:
+        0 12px 28px
+        rgba(100, 75, 20, 0.18);
+
+      cursor: pointer;
+
+      transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+
+    }
+
+
+    .menu-image-card:hover {
+
+      transform:
+        translateY(-7px);
+
+      box-shadow:
+        0 18px 38px
+        rgba(100, 75, 20, 0.25);
+
+    }
+
+
+    .menu-image-card img {
+
+      display: block;
+
+      width: 100%;
+
+      height: 330px;
+
+      object-fit: cover;
+
+      border-radius: 12px;
+
+    }
+
+
+    /*
+      First 3 = first row.
+      Last 2 = second row.
+    */
+
+    .menu-image-card:nth-child(4) {
+
+      grid-column: 1;
+
+    }
+
+
+    .menu-image-card:nth-child(5) {
+
+      grid-column: 2;
+
+    }
+
+
+    /* ==================================
+       MENU IMAGE POPUP
+    ================================== */
+
+    .menu-modal {
+
+      display: none;
+
+      position: fixed;
+
+      inset: 0;
+
+      z-index: 9999;
+
+      background:
+        rgba(0, 0, 0, 0.78);
+
+      align-items: center;
+
+      justify-content: center;
+
+      padding: 20px;
+
+    }
+
+
+    .menu-modal.show {
+
+      display: flex;
+
+    }
+
+
+    .menu-modal-box {
+
+      position: relative;
+
+      width: min(900px, 95vw);
+
+      background: #ffffff;
+
+      padding: 20px;
+
+      border-radius: 18px;
+
+      text-align: center;
+
+    }
+
+
+    .menu-modal-image {
+
+      display: block;
+
+      width: 100%;
+
+      max-height: 82vh;
+
+      object-fit: contain;
+
+      border-radius: 10px;
+
+    }
+
+
+    .menu-modal-close {
+
+      position: absolute;
+
+      right: 12px;
+
+      top: 12px;
+
+      width: 42px;
+
+      height: 42px;
+
+      border: none;
+
+      border-radius: 50%;
+
+      background: #000000;
+
+      color: #ffffff;
+
+      font-size: 25px;
+
+      cursor: pointer;
+
+      z-index: 2;
+
+    }
+
+
+    @media (max-width: 900px) {
+
+      .menu-image-grid {
+
+        grid-template-columns:
+          repeat(2, 1fr);
+
+      }
+
+
+      .menu-image-card:nth-child(4),
+      .menu-image-card:nth-child(5) {
+
+        grid-column: auto;
+
+      }
+
+
+      .menu-image-card img {
+
+        height: 300px;
+
+      }
+
+    }
+
+
+    @media (max-width: 600px) {
+
+      .menu-page {
+
+        padding:
+          50px 20px 70px;
+
+      }
+
+
+      .menu-image-grid {
+
+        grid-template-columns: 1fr;
+
+      }
+
+
+      .menu-image-card:nth-child(4),
+      .menu-image-card:nth-child(5) {
+
+        grid-column: auto;
+
+      }
+
+
+      .menu-image-card img {
+
+        height: 300px;
+
+      }
+
+    }
+
+  </style>
+
+</head>
+
+
+<body>
+
+
+  <!-- NAVIGATION -->
+
+  <nav class="navbar">
+
+    <div class="nav-container">
+
+      <a
+        href="index.html"
+        class="logo">
+
+        <span class="heart">
+          ♥
+        </span>
+
+        Meharunnisa's
+        <span>
+          Pâtisserie
+        </span>
+
+      </a>
+
+
+      <button
+        class="menu-toggle"
+        type="button"
+        aria-label="Open navigation"
+        aria-expanded="false">
+
+        <span></span>
+        <span></span>
+        <span></span>
+
+      </button>
+
+
+      <div class="nav-links">
+
+        <a href="index.html">
+          Home
+        </a>
+
+        <a href="about.html">
+          About
+        </a>
+
+        <a
+          href="menu.html"
+          class="active">
+
+          Menu
+
+        </a>
+
+        <a href="gallery.html">
+          Gallery
+        </a>
+
+        <a href="order.html">
+          Order
+        </a>
+
+        <a href="contact.html">
+          Contact
+        </a>
+
+      </div>
+
+    </div>
+
+  </nav>
+
+
+  <!-- HEADER -->
+
+  <section class="page-hero">
+
+    <div class="container">
+
+      <p class="section-label">
+        OUR MENU
+      </p>
+
+      <h1>
+        Deliciously Made For You
+      </h1>
+
+      <p>
+        Explore our complete menu.
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <!-- MENU -->
+
+  <main class="menu-page">
+
+    <div class="container">
+
+      <div class="menu-image-grid">
+
+
+        <!-- MENU 1 -->
+
+        <div
+          class="menu-image-card"
+          data-menu-image="images/menu1.jpg">
+
+          <img
+            src="images/menu1.jpg"
+            alt="Menu 1">
+
+        </div>
+
+
+        <!-- MENU 2 -->
+
+        <div
+          class="menu-image-card"
+          data-menu-image="images/menu2.jpg">
+
+          <img
+            src="images/menu2.jpg"
+            alt="Menu 2">
+
+        </div>
+
+
+        <!-- MENU 3 -->
+
+        <div
+          class="menu-image-card"
+          data-menu-image="images/menu3.jpg">
+
+          <img
+            src="images/menu3.jpg"
+            alt="Menu 3">
+
+        </div>
+
+
+        <!-- MENU 4 -->
+
+        <div
+          class="menu-image-card"
+          data-menu-image="images/menu4.jpg">
+
+          <img
+            src="images/menu4.jpg"
+            alt="Menu 4">
+
+        </div>
+
+
+        <!-- MENU 5 -->
+
+        <div
+          class="menu-image-card"
+          data-menu-image="images/menu5.jpg">
+
+          <img
+            src="images/menu5.jpg"
+            alt="Menu 5">
+
+        </div>
+
+
+      </div>
+
+    </div>
+
+  </main>
+
+
+  <!-- MENU IMAGE POPUP -->
+
+  <div
+    class="menu-modal"
+    id="menuModal">
+
+    <div class="menu-modal-box">
+
+      <button
+        class="menu-modal-close"
+        id="menuModalClose">
+
+        ×
+
+      </button>
+
+      <img
+        class="menu-modal-image"
+        id="menuModalImage"
+        src=""
+        alt="Menu">
+
+    </div>
+
+  </div>
+
+
+  <!-- FOOTER -->
+
+  <footer class="footer">
+
+    <div class="container">
+
+      <div class="footer-bottom">
+
+        © 2026 Meharunnisa's Pâtisserie.
+        All rights reserved.
+
+      </div>
+
+    </div>
+
+  </footer>
+
+
+  <script src="js/script.js"></script>
+
+
+  <!-- MENU CLICK SCRIPT -->
+
+  <script>
+
+    document.addEventListener(
+      "DOMContentLoaded",
+      function () {
+
+        const menuCards =
+          document.querySelectorAll(
+            ".menu-image-card"
+          );
+
+        const menuModal =
+          document.getElementById(
+            "menuModal"
+          );
+
+        const menuModalImage =
+          document.getElementById(
+            "menuModalImage"
+          );
+
+        const menuModalClose =
+          document.getElementById(
+            "menuModalClose"
+          );
+
+
+        menuCards.forEach(
+          function (card) {
+
+            card.addEventListener(
+              "click",
+              function () {
+
+                const imagePath =
+                  card.dataset.menuImage;
+
+
+                menuModalImage.src =
+                  imagePath;
+
+
+                menuModal.classList.add(
+                  "show"
+                );
+
+              }
+            );
+
+          }
+        );
+
+
+        menuModalClose.addEventListener(
+          "click",
+          function () {
+
+            menuModal.classList.remove(
+              "show"
+            );
+
+          }
+        );
+
+
+        menuModal.addEventListener(
+          "click",
+          function (event) {
+
+            if (
+              event.target === menuModal
+            ) {
+
+              menuModal.classList.remove(
+                "show"
+              );
+
+            }
+
+          }
+        );
+
+
+      }
+    );
+
+  </script>
+
+</body>
+
+</html>

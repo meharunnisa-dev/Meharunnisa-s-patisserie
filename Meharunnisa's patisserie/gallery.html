@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gallery | Meharunnisa's Patisserie</title>
+<link rel="stylesheet" href="css/style.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Great+Vibes&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* Only the extra styles needed for gallery */
+.add-order-btn {
+  width: 100%;
+  margin-top: 12px;
+  padding: 11px 15px;
+  border: 0;
+  border-radius: 8px;
+  background: #8b5e5e;
+  color: #fff;
+  font-family: Montserrat, sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: .3s;
+}
+.add-order-btn:hover {
+  background: #6f4545;
+  transform: translateY(-2px);
+}
+.orders-box {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  padding: 10px 16px;
+  border-radius: 8px;
+  background: #8b5e5e;
+  color: #fff;
+  text-decoration: none;
+  font-family: Montserrat, sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+}
+.orders-box:hover { background: #6f4545; }
+#cartCount {
+  min-width: 22px;
+  height: 22px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: #fff;
+  color: #8b5e5e;
+  font-size: 12px;
+}
+.offer-box {
+  display: none;
+  margin: 25px auto;
+  padding: 15px 20px;
+  max-width: 700px;
+  border: 1px solid #dfc7b8;
+  border-radius: 10px;
+  background: #f8eee8;
+  color: #6f4545;
+  text-align: center;
+  font-family: Montserrat, sans-serif;
+  font-size: 13px;
+  line-height: 1.7;
+}
+</style>
+</head>
+<body>
+<header class="site-header">
+  <div class="container nav-container">
+    <a href="index.html" class="logo">
+      <span class="logo-icon">♡</span>
+      <span>Meharunnisa's<small>Patisserie</small></span>
+    </a>
+    <button class="menu-toggle" type="button">☰</button>
+    <nav class="main-nav">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="menu.html">Menu</a>
+      <a href="gallery.html" class="active">Gallery</a>
+      <a href="order.html">Order</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="page-hero">
+    <div class="container">
+      <span class="eyebrow">OUR COLLECTION</span>
+      <h1>Sweet <span>Gallery</span></h1>
+      <p>Explore our handcrafted cakes, desserts, waffles, donuts and savoury favourites.</p>
+    </div>
+  </section>
+
+  <section class="section gallery-section">
+    <div class="container">
+      <div class="filter-buttons">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="cakes">Cakes</button>
+        <button class="filter-btn" data-filter="cupcakes">Cupcakes</button>
+        <button class="filter-btn" data-filter="donuts">Donuts</button>
+        <button class="filter-btn" data-filter="desserts">Desserts</button>
+        <button class="filter-btn" data-filter="waffles">Waffles</button>
+        <button class="filter-btn" data-filter="sandwiches">Sandwiches</button>
+        <button class="filter-btn" data-filter="buffets">Buffet</button>
+        <a href="order.html" class="orders-box">🛒 Orders <span id="cartCount">0</span></a>
+      </div>
+
+      <div id="offerBox" class="offer-box">
+        🎁 <strong>Special Gift Offer!</strong><br>
+        Spend ₹1,000 or more and receive an <strong>exclusive dessert box complimentary.</strong>
+      </div>
+
+      <div class="gallery-grid">
+        <!-- CAKES -->
+        <article class="gallery-card" data-category="cakes" data-name="Celebration Cake" data-price="500">
+          <div class="gallery-image">
+            <img src="images/cake1.jpg" alt="Celebration Cake">
+            <button type="button" class="image-view-btn" onclick="openImage('images/cake1.jpg')">+</button>
+          </div>
+          <div class="gallery-info">
+            <h3>Celebration Cake</h3>
+            <p>Beautifully crafted for special moments.</p>
+            <span>₹500</span>
+            <button type="button" class="add-order-btn" onclick="addToOrder('Celebration Cake',500,'images/cake1.jpg')">Add to Order</button>
+          </div>
+        </article>
+
+        <article class="gallery-card" data-category="cakes" data-name="Chocolate Cake" data-price="650">
+          <div class="gallery-image">
+            <img src="images/cake2.jpg" alt="Chocolate Cake">
+            <button type="button" class="image-view-btn" onclick="openImage('images/cake2.jpg')">+</button>
+          </div>
+          <div class="gallery-info">
+            <h3>Chocolate Cake</h3>
+            <p>Rich, smooth and indulgent.</p>
+            <span>₹650</span>
+            <button type="button" class="add-order-btn" onclick="addToOrder('Chocolate Cake',650,'images/cake2.jpg')">Add to Order</button>
+          </div>
+        </article>
+
+        <article class="gallery-card" data-category="cakes" data-name="Signature Cake" data-price="700">
+          <div class="gallery-image">
+            <img src="images/cake3.jpg" alt="Signature Cake">
+            <button type="button" class="image-view-btn" onclick="openImage('images/cake3.jpg')">+</button>
+          </div>
+          <div class="gallery-info">
+            <h3>Signature Cake</h3>
+            <p>Made for memorable celebrations.</p>
+            <span>₹700</span>
+            <button type="button" class="add-order-btn" onclick="addToOrder('Signature Cake',700,'images/cake3.jpg')">Add to Order</button>
+          </div>
+        </article>
+
+        <article class="gallery-card" data-category="cakes" data-name="Special Cake" data-price="750">
+          <div class="gallery-image">
+            <img src="images/cake4.jpg" alt="Special Cake">
+            <button type="button" class="image-view-btn" onclick="openImage('images/cake4.jpg')">+</button>
+          </div>
+          <div class="gallery-info">
+            <h3>Special Cake</h3>
+            <p>Elegant decoration and delicious flavour.</p>
+            <span>₹750</span>
+            <button type="button" class="add-order-btn" onclick="addToOrder('Special Cake',750,'images/cake4.jpg')">Add to Order</button>
+          </div>
+        </article>
+
+        <article class="gallery-card" data-category="cakes" data-name="Premium Cake" data-price="850">
+          <div class="gallery-image">
+            <img src="images/cake5.jpg" alt="Premium Cake">
+            <button type="button" class="image-view-btn" onclick="openImage('images/cake5.jpg')">+</button>
+          </div>
+          <div class="gallery-info">
+            <h3>Premium Cake</h3>
+            <p>A beautiful centrepiece for your table.</p>
+            <span>₹850</span>
+            <button type="button" class="add-order-btn" onclick="addToOrder('Premium Cake',850,'images/cake5.jpg')">Add to Order</button>
+          </div>
+        </article>
+
+        <!-- CUPCAKES -->
+        <article class="gallery-card" data-category="cupcakes" data-name="Chocolate Cupcake" data-price="149">
+          <div class="gallery-image">
+            <img src="images/cupcakes1.jpg" alt="Chocolate Cupcake">
+            <button type="button" class="image-view-btn" onclick="openImage('images/cupcakes1.jpg')">+</button>
+          </div>
+          <div class="gallery-info">
+            <h3>Chocolate Cupcake</h3>
+            <p>Soft cake with creamy frosting.</p>
+            <span>₹149</span>
+            <button type="button" class="add-order-btn" onclick="addToOrder('Chocolate Cupcake',149,'images/cupcakes1.jpg')">Add to Order</button>
+          </div>
+        </article>
+
+        <article class="gallery-card" data-category="cupcakes" data-name="Special Cupcake" data-price="149">
+          <div class="gallery-image">
+            <img src="images/cupcakes2.jpg" alt="Special Cupcake">
+            <button type="button" class="image-view-btn" onclick="openImage('images/cupcakes2.jpg')">+</button>
+          </div>
+          <div class="gallery-info">
+            <h3>Special Cupcake</h3>
+            <p>Sweet, soft and beautifully finished.</p>
+            <span>₹149</span>
+            <button type="button" class="add-order-btn" onclick="addToOrder('Special Cupcake',149,'images/cupcakes2.jpg')">Add to Order</button>
+          </div>
+        </article>
+
+        <article class="gallery-card" data-category="cupcakes" data-name="Celebration Cupcake" data-price="149">
+          <div class="gallery-image">
+            <img src="images/cupcakes3.jpg" alt="Celebration Cupcake">
+            <button type="button" class="image-view-btn" onclick="openImage('images/cupcakes3.jpg')">+</button>
+          </div>
+          <div class="gallery-info">
+            <h3>Celebration Cupcake</h3>
+            <p>Perfect for parties and gatherings.</p>
+            <span>₹149</span>
+            <button type="button" class="add-order-btn" onclick="addToOrder('Celebration Cupcake',149,'images/cupcakes3.jpg')">Add to Order</button>
+          </div>
+        </article>
+
+        <!-- DONUTS -->
+        <article class="gallery-card" data-category="donuts" data-name="Chocolate Donut" data-price="129">
+          <div class="gallery-image">
+            <img src="images/donuts1.jpg" alt="Chocolate Donut">
+            <button type="button" class="image-view-btn" onclick="openImage('images/donuts1.jpg')">+</button>
+          </div>
+          <div class="gallery-info">
+            <h3>Chocolate Donut</h3>
+            <p>Soft donut with delicious chocolate topping.</p>
+            <span>₹129</span>
+            <button type="button" class="add-order-btn" onclick="addToOrder('Chocolate Donut',129,'images/donuts1.jpg')">Add to Order</button>
+          </div>
+        </article>
+
+        <article class="gallery-card" data-category="donuts" data-name="Special Donut" data-price="129">
+          <div class="gallery-image">
+            <img src="images/donuts2.jpg" alt="Special Donut">
+            <button type="button" class="image-view-btn" onclick="openImage('images/donuts2.jpg')">+</button>
+          </div>
+          <div class="gallery-info">
+            <h3>Special Donut</h3>
+            <p>A sweet little treat for any time of day.</p>
+            <span>₹129</span>
+            <button type="button" class="add-order-btn" onclick="addToOrder('Special Donut',129,'images/donuts2.jpg')">Add to Order</button>
+          </div>
+        </article>
+
+        <!-- DESSERTS -->
+        <article class="gallery-card" data-category="desserts" data-name="Chocolate Brownie" data-price="199">
+          <div class="gallery-image">
+            <img src="images/desert1.jpg" alt="Chocolate Brownie">
+            <button type="button" class="image-view-btn" onclick="openImage('images/desert1.jpg')">+</button>
+          </div>
+          <div class="gallery-info">
+            <h3>Chocolate Brownie</h3>
+            <p>Warm brownie with chocolate indulgence.</p>
+            <span>₹199</span>
+            <button type="button" class="add-order-btn" onclick="addToOrder('Chocolate Brownie',199,'images/desert1.jpg')">Add to Order</button>
+          </div>
+        </article>
+
+        <article class="gallery-card" data-category="desserts" data-name="Signature Dessert" data-price="199">
+          <div class="gallery-image">
+            <img src="images/desert2.jpg" alt="Signature Dessert">
+            <button type="button" class="image-view-btn" onclick="openImage('images/desert2.jpg')">+</button>
+          </div>
+          <div class="gallery-info">
+            <h3>Signature Dessert</h3>
+            <p>Beautifully presented and delicious.</p>
+            <span>₹199</span>
+            <button type="button" class="add-order-btn" onclick="addToOrder('Signature Dessert',199,'images/desert2.jpg')">Add to Order</button>
+          </div>
+        </article>
+
+        <article class="gallery-card" data-category="desserts" data-name="Sweet Delight" data-price="199">
+          <div class="gallery-image">
+            <img src="images/desert3.jpg" alt="Sweet Delight">
+            <button type="button" class="image-view-btn" onclick="openImage('images/desert3.jpg')">+</button>
+          </div>
+          <div class="gallery-info">
+            <h3>Sweet Delight</h3>
+            <p>Perfect for your sweetest moments.</p>
+            <span>₹199</span>
+            <button type="button" class="add-order-btn" onclick="addToOrder('Sweet Delight',199,'images/desert3.jpg')">Add to Order</button>
+          </div>
+        </article>
+
+        <!-- WAFFLES -->
+        <article class="gallery-card" data-category="waffles" data-name="Classic Waffle" data-price="179">
+          <div class="gallery-image">
+            <img src="images/waffle1.jpg" alt="Classic Waffle">
+            <button type="button" class="image-view-btn" onclick="openImage('images/waffle1.jpg')">+</button>
+          </div>
+          <div class="gallery-info">
+            <h3>Classic Waffle</h3>
+            <p>Golden, crispy and delicious.</p>
+            <span>₹179</span>
+            <button type="button" class="add-order-btn" onclick="addToOrder('Classic Waffle',179,'images/waffle1.jpg')">Add to Order</button>
+          </div>
+        </article>
+
+        <article class="gallery-card" data-category="waffles" data-name="Chocolate Waffle" data-price="199">
+          <div class="gallery-image">
+            <img src="images/waffle2.jpg" alt="Chocolate Waffle">
+            <button type="button" class="image-view-btn" onclick="openImage('images/waffle2.jpg')">+</button>
+          </div>
+          <div class="gallery-info">
+            <h3>Chocolate Waffle</h3>
+            <p>Chocolate chips with creamy topping.</p>
+            <span>₹199</span>
+            <button type="button" class="add-order-btn" onclick="addToOrder('Chocolate Waffle',199,'images/waffle2.jpg')">Add to Order</button>
+          </div>
+        </article>
+
+        <article class="gallery-card" data-category="waffles" data-name="Special Waffle" data-price="199">
+          <div class="gallery-image">
+            <img src="images/waffle3.jpg" alt="Special Waffle">
+            <button type="button" class="image-view-btn" onclick="openImage('images/waffle3.jpg')">+</button>
+          </div>
+          <div class="gallery-info">
+            <h3>Special Waffle</h3>
+            <p>A delicious waffle treat.</p>
+            <span>₹199</span>
+            <button type="button" class="add-order-btn" onclick="addToOrder('Special Waffle',199,'images/waffle3.jpg')">Add to Order</button>
+          </div>
+        </article>
+
+        <!-- SANDWICHES -->
+        <article class="gallery-card" data-category="sandwiches" data-name="Classic Sandwich" data-price="199">
+          <div class="gallery-image">
+            <img src="images/sandwich1.jpg" alt="Classic Sandwich">
+            <button type="button" class="image-view-btn" onclick="openImage('images/sandwich1.jpg')">+</button>
+          </div>
+          <div class="gallery-info">
+            <h3>Classic Sandwich</h3>
+            <p>Fresh and satisfying savoury favourite.</p>
+            <span>₹199</span>
+            <button type="button" class="add-order-btn" onclick="addToOrder('Classic Sandwich',199,'images/sandwich1.jpg')">Add to Order</button>
+          </div>
+        </article>
+
+        <article class="gallery-card" data-category="sandwiches" data-name="Special Sandwich" data-price="209">
+          <div class="gallery-image">
+            <img src="images/sandwich2.jpg" alt="Special Sandwich">
+            <button type="button" class="image-view-btn" onclick="openImage('images/sandwich2.jpg')">+</button>
+          </div>
+          <div class="gallery-info">
+            <h3>Special Sandwich</h3>
+            <p>A tasty sandwich made with care.</p>
+            <span>₹209</span>
+            <button type="button" class="add-order-btn" onclick="addToOrder('Special Sandwich',209,'images/sandwich2.jpg')">Add to Order</button>
+          </div>
+        </article>
+
+        <article class="gallery-card" data-category="sandwiches" data-name="Cheese Sandwich" data-price="219">
+          <div class="gallery-image">
+            <img src="images/sandwich3.jpg" alt="Cheese Sandwich">
+            <button type="button" class="image-view-btn" onclick="openImage('images/sandwich3.jpg')">+</button>
+          </div>
+          <div class="gallery-info">
+            <h3>Cheese Sandwich</h3>
+            <p>Creamy, cheesy and delicious.</p>
+            <span>₹219</span>
+            <button type="button" class="add-order-btn" onclick="addToOrder('Cheese Sandwich',219,'images/sandwich3.jpg')">Add to Order</button>
+          </div>
+        </article>
+
+        <article class="gallery-card" data-category="sandwiches" data-name="Signature Sandwich" data-price="219">
+          <div class="gallery-image">
+            <img src="images/sandwich4.jpg" alt="Signature Sandwich">
+            <button type="button" class="image-view-btn" onclick="openImage('images/sandwich4.jpg')">+</button>
+          </div>
+          <div class="gallery-info">
+            <h3>Signature Sandwich</h3>
+            <p>A satisfying savoury favourite.</p>
+            <span>₹219</span>
+            <button type="button" class="add-order-btn" onclick="addToOrder('Signature Sandwich',219,'images/sandwich4.jpg')">Add to Order</button>
+          </div>
+        </article>
+
+        <!-- BUFFETS -->
+        <article class="gallery-card" data-category="buffets" data-name="Classic Buffet" data-price="499">
+          <div class="gallery-image">
+            <img src="images/buffet1.jpg" alt="Classic Buffet">
+            <button type="button" class="image-view-btn" onclick="openImage('images/buffet1.jpg')">+</button>
+          </div>
+          <div class="gallery-info">
+            <h3>Classic Buffet</h3>
+            <p>A delicious selection for gatherings.</p>
+            <span>₹499</span>
+            <button type="button" class="add-order-btn" onclick="addToOrder('Classic Buffet',499,'images/buffet1.jpg')">Add to Order</button>
+          </div>
+        </article>
+
+        <article class="gallery-card" data-category="buffets" data-name="Premium Buffet" data-price="699">
+          <div class="gallery-image">
+            <img src="images/buffet2.jpg" alt="Premium Buffet">
+            <button type="button" class="image-view-btn" onclick="openImage('images/buffet2.jpg')">+</button>
+          </div>
+          <div class="gallery-info">
+            <h3>Premium Buffet</h3>
+            <p>Beautifully prepared for special occasions.</p>
+            <span>₹699</span>
+            <button type="button" class="add-order-btn" onclick="addToOrder('Premium Buffet',699,'images/buffet2.jpg')">Add to Order</button>
+          </div>
+        </article>
+
+        <article class="gallery-card" data-category="buffets" data-name="Grand Buffet" data-price="999">
+          <div class="gallery-image">
+            <img src="images/buffet3.jpg" alt="Grand Buffet">
+            <button type="button" class="image-view-btn" onclick="openImage('images/buffet3.jpg')">+</button>
+          </div>
+          <div class="gallery-info">
+            <h3>Grand Buffet</h3>
+            <p>A complete feast for celebrations.</p>
+            <span>₹999</span>
+            <button type="button" class="add-order-btn" onclick="addToOrder('Grand Buffet',999,'images/buffet3.jpg')">Add to Order</button>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div>
+      <div class="footer-logo">Meharunnisa's <span>Patisserie</span></div>
+      <p>Every bite tells a story.</p>
+    </div>
+    <div>
+      <h4>Quick Links</h4>
+      <a href="index.html">Home</a>
+      <a href="menu.html">Menu</a>
+      <a href="order.html">Order</a>
+    </div>
+    <div>
+      <h4>Gallery</h4>
+      <a href="gallery.html?category=cakes">Cakes</a>
+      <a href="gallery.html?category=donuts">Donuts</a>
+      <a href="gallery.html?category=waffles">Waffles</a>
+      <a href="gallery.html?category=sandwiches">Sandwiches</a>
+    </div>
+    <div>
+      <h4>Contact</h4>
+      <a href="contact.html">Get In Touch</a>
+    </div>
+  </div>
+  <div class="copyright">© 2026 Meharunnisa's Patisserie. All rights reserved.</div>
+</footer>
+
+<div class="image-modal" id="imageModal">
+  <button class="modal-close" onclick="closeImage()">×</button>
+  <img id="modalImage" src="" alt="Gallery Preview">
+</div>
+
+<script src="js/script.js"></script>
+</body>
+</html>

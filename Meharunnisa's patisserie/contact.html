@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+  <title>
+    Contact | Meharunnisa's Pâtisserie
+  </title>
+
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+
+  <nav class="navbar">
+
+    <div class="nav-container">
+
+      <a href="index.html" class="logo">
+        <span class="heart">♥</span>
+        Meharunnisa's <span>Pâtisserie</span>
+      </a>
+
+      <button class="menu-toggle"
+              aria-label="Open navigation"
+              aria-expanded="false">
+
+        <span></span>
+        <span></span>
+        <span></span>
+
+      </button>
+
+      <div class="nav-links">
+
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="menu.html">Menu</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="order.html">Order</a>
+        <a href="contact.html" class="active">Contact</a>
+
+      </div>
+
+    </div>
+
+  </nav>
+
+
+  <section class="page-hero contact-hero">
+
+    <div class="container">
+
+      <p class="section-label">
+        GET IN TOUCH
+      </p>
+
+      <h1>
+        Contact Us
+      </h1>
+
+      <p>
+        We would love to hear from you.
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <main class="contact-page">
+
+    <div class="container">
+
+      <div class="contact-layout">
+
+
+        <div class="contact-info">
+
+          <p class="section-label">
+            LET'S MAKE SOMETHING SWEET
+          </p>
+
+          <h2>
+            Let's Make Something Sweet
+          </h2>
+
+          <p>
+            Have a question about our cakes, desserts
+            or orders? Send us a message and we will
+            be happy to help.
+          </p>
+
+
+          <div class="contact-details">
+
+
+            <div class="contact-item">
+
+              <div class="icon">
+                📞
+              </div>
+
+              <div>
+
+                <h4>
+                  Phone
+                </h4>
+
+                <p>
+                  +91 00000 00000
+                </p>
+
+              </div>
+
+            </div>
+
+
+            <div class="contact-item">
+
+              <div class="icon">
+                ✉️
+              </div>
+
+              <div>
+
+                <h4>
+                  Email
+                </h4>
+
+                <p>
+                  meharunnisaspatisserie@example.com
+                </p>
+
+              </div>
+
+            </div>
+
+
+            <div class="contact-item">
+
+              <div class="icon">
+                📍
+              </div>
+
+              <div>
+
+                <h4>
+                  Location
+                </h4>
+
+                <p>
+                  Visit our bakery at our local location.
+                </p>
+
+              </div>
+
+            </div>
+
+
+          </div>
+
+        </div>
+
+
+        <div class="contact-form-card">
+
+          <h3>
+            Send Us A Message
+          </h3>
+
+
+          <form id="contactForm">
+
+
+            <div class="form-group">
+
+              <label for="contactName">
+                Your Name
+              </label>
+
+              <input type="text"
+                     id="contactName"
+                     name="name"
+                     placeholder="Enter your name"
+                     required>
+
+            </div>
+
+
+            <div class="form-group">
+
+              <label for="contactEmail">
+                Email Address
+              </label>
+
+              <input type="email"
+                     id="contactEmail"
+                     name="email"
+                     placeholder="Enter your email"
+                     required>
+
+            </div>
+
+
+            <div class="form-group">
+
+              <label for="contactPhone">
+                Phone Number
+              </label>
+
+              <input type="tel"
+                     id="contactPhone"
+                     name="phone"
+                     placeholder="Enter your phone number">
+
+            </div>
+
+
+            <div class="form-group">
+
+              <label for="contactMessageInput">
+                Message
+              </label>
+
+              <textarea id="contactMessageInput"
+                        name="message"
+                        placeholder="Write your message here..."
+                        required></textarea>
+
+            </div>
+
+
+            <button type="submit"
+                    class="btn btn-green form-submit">
+
+              Send Message
+
+            </button>
+            <div id="contactMessage" class="contact-success">
+        ✓ Your order has been sent successfully!
+        <button type="button" onclick="closeContactMessage()">OK</button>
+     </div>
+
+            <p class="form-message"></p>
+
+          </form>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </main>
+
+
+  <section class="map-section">
+
+    <div class="container">
+
+      <div class="map-card">
+
+        <div class="map-copy">
+
+          <p class="section-label">
+            FIND US
+          </p>
+
+          <h2>
+            Visit Our Bakery
+          </h2>
+
+          <p>
+            Use the map below to find the bakery location.
+            You can replace the map location with your
+            exact bakery address whenever you are ready.
+          </p>
+
+          <a href="https://www.google.com/maps"
+             target="_blank"
+             rel="noopener"
+             class="btn btn-green">
+
+            Open Map
+
+          </a>
+
+        </div>
+
+
+        <div class="map-frame">
+
+          <iframe
+            src="https://www.google.com/maps?q=Kottapeta%2C%20Andhra%20Pradesh%2C%20India&output=embed"
+            loading="lazy"
+            title="Bakery location map">
+          </iframe>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <footer class="footer">
+
+    <div class="container">
+
+      <div class="footer-bottom">
+        © 2026 Meharunnisa's Pâtisserie.
+        All rights reserved.
+      </div>
+
+    </div>
+
+  </footer>
+
+<script src="js/script.js"></script>
+  
+
+</body>
+</html>
